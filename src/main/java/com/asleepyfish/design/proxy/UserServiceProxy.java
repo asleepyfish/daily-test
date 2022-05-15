@@ -1,7 +1,5 @@
 package com.asleepyfish.design.proxy;
 
-import org.springframework.stereotype.Component;
-
 /**
  * @Author: zhoujh42045
  * @Date: 2022/5/13 15:03

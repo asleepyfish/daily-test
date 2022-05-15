@@ -5,7 +5,7 @@ import com.asleepyfish.pojo.xml.Student;
 import com.asleepyfish.pojo.xml.User;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -13,7 +13,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @Date: 2022/5/12 15:40
  * @Description: TODO
  */
-@SpringBootApplication
+@SpringBootTest
 public class IocTest {
     @Resource
     private Address address;
@@ -81,6 +81,6 @@ public class IocTest {
 
     @Test
     public void getAddress() {
-        System.out.println(address);
+        System.out.println(address.getName());
     }
 }

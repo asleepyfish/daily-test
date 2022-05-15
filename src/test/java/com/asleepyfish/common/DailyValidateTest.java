@@ -24,6 +24,5 @@ public class DailyValidateTest {
 
     @Test
     public void test() {
-
     }
 }
