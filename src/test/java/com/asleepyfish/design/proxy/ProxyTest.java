@@ -1,15 +1,17 @@
 package com.asleepyfish.design.proxy;
 
-import jakarta.annotation.Resource;
+import com.asleepyfish.DailyTestApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import javax.annotation.Resource;
 
 /**
  * @Author: zhoujh42045
  * @Date: 2022/5/13 14:55
  * @Description: TODO
  */
-@SpringBootTest
+@SpringBootTest(classes = DailyTestApplication.class)
 public class ProxyTest {
     @Resource
     private UserService userService;

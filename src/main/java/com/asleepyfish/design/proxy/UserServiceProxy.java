@@ -5,6 +5,7 @@ package com.asleepyfish.design.proxy;
  * @Date: 2022/5/13 15:03
  * @Description: TODO
  */
+
 public class UserServiceProxy implements UserService {
     private UserService userService;
 

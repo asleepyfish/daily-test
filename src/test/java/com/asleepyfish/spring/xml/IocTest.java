@@ -1,11 +1,8 @@
-package com.asleepyfish.spring;
+package com.asleepyfish.spring.xml;
 
-import com.asleepyfish.pojo.xml.Address;
 import com.asleepyfish.pojo.xml.Student;
 import com.asleepyfish.pojo.xml.User;
-import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -13,14 +10,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @Date: 2022/5/12 15:40
  * @Description: TODO
  */
-@SpringBootTest
 public class IocTest {
-    @Resource
-    private Address address;
-
     @Test
     public void getBeanTest() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/beans.xml");
         Object student1 = context.getBean("student");
         if (student1 instanceof Student) {
             System.out.println(student1);
@@ -49,7 +42,7 @@ public class IocTest {
 
     @Test
     public void scopeTest() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/beans.xml");
         Object student = context.getBean("student");
         Object student2 = context.getBean("student");
         System.out.println(student == student2);
@@ -57,7 +50,7 @@ public class IocTest {
 
     @Test
     public void getUserTest() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("animals.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/animals.xml");
         Object user = context.getBean("user");
         if (user instanceof User) {
             ((User) user).getCat().shout();
@@ -77,10 +70,5 @@ public class IocTest {
         if (product instanceof Product) {
             System.out.println(product);
         }*/
-    }
-
-    @Test
-    public void getAddress() {
-        System.out.println(address.getName());
     }
 }

@@ -2,13 +2,14 @@ package com.asleepyfish.design.proxy;
 
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * @Author: zhoujh42045
  * @Date: 2022/5/13 15:02
  * @Description: TODO
  */
-@Component
+@Service
 public class UserServiceImpl implements UserService {
     @Override
     public void add() {
