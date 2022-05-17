@@ -9,5 +9,11 @@ spring:
   thymeleaf:
     prefix: classpath:/thymeleaf/
     suffix: .html
+  Jpa:
+    hibernate:
+      # 更新或创建数据表
+      ddl-auto: update
+    # 在控制台显示sql
+    show-sql: true
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
