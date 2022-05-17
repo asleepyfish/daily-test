@@ -2,7 +2,6 @@ package com.asleepyfish.common;
 
 import org.junit.jupiter.api.Test;
 
-import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,30 +19,51 @@ public class DailyValidateTest {
         map.put(2, "b");
         map.put(3, "c");
         map.put(4, "d");
-        map.entrySet().removeIf(entry -> entry.getKey() == 1);
+        map.entrySet().removeIf(entry -> entry.getKey() == 2);
+        System.out.println(map);
+        map.putIfAbsent(1, "f");
+        map.putIfAbsent(5, "e");
         System.out.println(map);
     }
 
     @Test
     public void test() {
-        System.out.println(lastRemaining(10, 17));
+        int[] nums = {2, 3, 4, 5};
+        System.out.println(Arrays.toString(constructArr(nums)));
     }
 
-    public int lastRemaining(int n, int m) {
-        int[] arr = new int[n];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = i;
+    public int[] constructArr(int[] a) {
+        if (a == null || a.length == 0) {
+            return new int[0];
         }
-        int index = 0;
-        while (n > 1) {
-            index = (index + m - 1) % n;
-            if (n - 1 - index > 0) {
-                System.arraycopy(arr, index + 1, arr, index, n - 1 - index);
+        int[] res = new int[a.length];
+        for (int i = 0; i < res.length; i++) {
+            int tmp = 1;
+            for (int j = 0; j < res.length; j++) {
+                if (j == i) {
+                    continue;
+                }
+                tmp *= a[j];
             }
-            arr = Arrays.copyOf(arr, --n);
-            System.out.println(Arrays.toString(arr));
+            res[i] = tmp;
         }
-        return arr[0];
+        return res;
     }
 
+    public int[] constructArr2(int[] a) {
+        if (a == null || a.length == 0) {
+            return new int[0];
+        }
+        int[] res = new int[a.length];
+        res[0] = 1;
+        for (int i = 1; i <= a.length - 1; i++) {
+            res[i] = res[i - 1] * a[i - 1];
+        }
+        int tmp = 1;
+        for (int i = a.length - 2; i >= 0; i--) {
+            tmp *= a[i + 1];
+            res[i] *= tmp;
+        }
+        return res;
+    }
 }

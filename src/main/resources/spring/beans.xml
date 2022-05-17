@@ -4,10 +4,10 @@
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="address" class="com.asleepyfish.pojo.xml.Address">
+    <bean id="address" class="com.asleepyfish.spring.pojo.xml.Address">
         <constructor-arg index="0" value="杭州市"/>
     </bean>
-    <bean id="student1" name="student" class="com.asleepyfish.pojo.xml.Student">
+    <bean id="student1" name="student" class="com.asleepyfish.spring.pojo.xml.Student">
         <property name="id" value="1"/>
         <property name="name" value="1"/>
         <property name="sex" value="1"/>
@@ -17,7 +17,7 @@
 
     <!--下面三种方法使用带参构造方法创建-->
     <!-- 第一种根据index参数下标设置 -->
-    <bean id="student2" class="com.asleepyfish.pojo.xml.Student">
+    <bean id="student2" class="com.asleepyfish.spring.pojo.xml.Student">
         <!-- index指构造方法 , 下标从0开始 -->
         <constructor-arg index="0" value="2"/>
         <constructor-arg index="1" value="2"/>
@@ -26,7 +26,7 @@
         <constructor-arg index="4" ref="address"/>
     </bean>
     <!-- 第二种根据参数名字设置 -->
-    <bean id="student3" class="com.asleepyfish.pojo.xml.Student">
+    <bean id="student3" class="com.asleepyfish.spring.pojo.xml.Student">
         <constructor-arg name="id" value="3"/>
         <constructor-arg name="name" value="3"/>
         <constructor-arg name="sex" value="3"/>
@@ -34,18 +34,18 @@
         <constructor-arg name="address" ref="address"/>
     </bean>
     <!-- 第三种根据参数类型设置 -->
-    <bean id="student4" class="com.asleepyfish.pojo.xml.Student">
+    <bean id="student4" class="com.asleepyfish.spring.pojo.xml.Student">
         <constructor-arg type="java.lang.Integer" value="4"/>
         <constructor-arg type="java.lang.String" value="4"/>
         <constructor-arg type="java.lang.String" value="4"/>
         <constructor-arg type="java.lang.Double" value="4"/>
-        <constructor-arg type="com.asleepyfish.pojo.xml.Address" ref="address"/>
+        <constructor-arg type="com.asleepyfish.spring.pojo.xml.Address" ref="address"/>
     </bean>
 
     <!--P命名空间注入-直接注入属性-->
-    <bean id="studentP" class="com.asleepyfish.pojo.xml.Student" p:id="5" p:name="5"/>
+    <bean id="studentP" class="com.asleepyfish.spring.pojo.xml.Student" p:id="5" p:name="5"/>
     <!--C命名空间注入-带参构造-->
-    <bean id="studentC" class="com.asleepyfish.pojo.xml.Student" c:id="6" c:name="6"/>
+    <bean id="studentC" class="com.asleepyfish.spring.pojo.xml.Student" c:id="6" c:name="6"/>
 
     <!--设置别名-->
     <alias name="student1" alias="student"/>

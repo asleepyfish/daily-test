@@ -1,8 +1,11 @@
 package com.asleepyfish.spring.xml;
 
-import com.asleepyfish.pojo.xml.Student;
-import com.asleepyfish.pojo.xml.User;
+import com.asleepyfish.spring.pojo.annotation.Product;
+import com.asleepyfish.spring.pojo.annotation.ProductConfig;
+import com.asleepyfish.spring.pojo.xml.Student;
+import com.asleepyfish.spring.pojo.xml.User;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -58,17 +61,17 @@ public class IocTest {
         }
         Object user2 = context.getBean("user2");
         if (user instanceof User) {
-            ((User) user).getDog().shout();
-            ((User) user).getCat().shout();
+            ((User) user2).getDog().shout();
+            ((User) user2).getCat().shout();
         }
     }
 
     @Test
     public void getProduct() {
-/*        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ProductConfig.class);
         Object product = context.getBean("product");
         if (product instanceof Product) {
             System.out.println(product);
-        }*/
+        }
     }
 }

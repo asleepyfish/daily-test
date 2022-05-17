@@ -1,6 +1,7 @@
 package com.asleepyfish.spring.annotation;
 
-import com.asleepyfish.pojo.xml.Address;
+import com.asleepyfish.spring.pojo.annotation.Product;
+import com.asleepyfish.spring.pojo.xml.Address;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -16,8 +17,16 @@ public class AnnotationIocTest {
     @Resource
     private Address address;
 
+    @Resource
+    private Product product;
+
     @Test
     public void getAddress() {
         System.out.println(address.getName());
+    }
+
+    @Test
+    public void getProduct() {
+        System.out.println(product.getName());
     }
 }

@@ -2,16 +2,16 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="dog" class="com.asleepyfish.pojo.xml.Dog"/>
-    <bean id="cat" class="com.asleepyfish.pojo.xml.Cat"/>
+    <bean id="dog" class="com.asleepyfish.spring.pojo.xml.Dog"/>
+    <bean id="cat" class="com.asleepyfish.spring.pojo.xml.Cat"/>
 
-    <bean id="user" class="com.asleepyfish.pojo.xml.User">
+    <bean id="user" class="com.asleepyfish.spring.pojo.xml.User">
         <property name="cat" ref="cat"/>
         <property name="dog" ref="dog"/>
         <property name="name" value="张三"/>
     </bean>
 
-    <bean id="user2" class="com.asleepyfish.pojo.xml.User">
+    <bean id="user2" class="com.asleepyfish.spring.pojo.xml.User">
         <property name="cat" ref="cat"/>
     </bean>
 </beans>

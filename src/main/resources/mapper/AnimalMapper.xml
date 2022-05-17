@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.asleepyfish.dao.AnimalDao">
+<mapper namespace="com.asleepyfish.spring.dao.AnimalDao">
 
-    <resultMap id="BaseResultMap" type="com.asleepyfish.pojo.mybatis.Animal">
+    <resultMap id="BaseResultMap" type="com.asleepyfish.spring.pojo.mybatis.Animal">
         <result column="id" jdbcType="INTEGER" property="id" />
         <result column="name" jdbcType="VARCHAR" property="name" />
         <result column="description" jdbcType="VARCHAR" property="description" />
     </resultMap>
+    <insert id="insertAnimal">
+        insert into animal(id, name, description) values (#{id}, #{name}, #{description})
+    </insert>
 
-    <select id="getAnimals" resultType="com.asleepyfish.pojo.mybatis.Animal">
+    <delete id="deleteAnimal">
+        delete from animal where id = #{id}
+    </delete>
+
+    <select id="getAnimals" resultType="com.asleepyfish.spring.pojo.mybatis.Animal">
         select * from animal where id = #{id}
     </select>
+
 
 </mapper>

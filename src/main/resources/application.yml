@@ -6,6 +6,8 @@ spring:
     url: jdbc:mysql://10.20.146.140:33061/zjh?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: root123
-#配置mapper的映射文件的位置
+  thymeleaf:
+    prefix: classpath:/thymeleaf/
+    suffix: .html
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
