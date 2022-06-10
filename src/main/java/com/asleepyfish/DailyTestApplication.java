@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author asleepyfish
  */
 @SpringBootApplication
-@MapperScan(basePackages = "com.asleepyfish.spring.dao")
+@MapperScan(basePackages = "com.asleepyfish")
 public class DailyTestApplication {
 
     public static void main(String[] args) {

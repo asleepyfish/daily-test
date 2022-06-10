@@ -17,3 +17,7 @@ spring:
     show-sql: true
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
+# mybatis日志（控制台显示sql语句）
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

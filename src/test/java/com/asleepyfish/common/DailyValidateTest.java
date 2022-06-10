@@ -2,7 +2,6 @@ package com.asleepyfish.common;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,42 +27,21 @@ public class DailyValidateTest {
 
     @Test
     public void test() {
-        int[] nums = {2, 3, 4, 5};
-        System.out.println(Arrays.toString(constructArr(nums)));
     }
 
-    public int[] constructArr(int[] a) {
-        if (a == null || a.length == 0) {
-            return new int[0];
-        }
-        int[] res = new int[a.length];
-        for (int i = 0; i < res.length; i++) {
-            int tmp = 1;
-            for (int j = 0; j < res.length; j++) {
-                if (j == i) {
-                    continue;
+    public int nearestValidPoint(int x, int y, int[][] points) {
+        int min = Integer.MAX_VALUE;
+        int res = -1;
+        for (int i = 0; i < points.length; i++) {
+            if (points[i][0] == x || points[i][1] == y) {
+                int tmp = Math.abs(x - points[i][0]) + Math.abs(y - points[i][1]);
+                if (tmp < min) {
+                    min = tmp;
+                    res = i;
                 }
-                tmp *= a[j];
             }
-            res[i] = tmp;
         }
         return res;
     }
 
-    public int[] constructArr2(int[] a) {
-        if (a == null || a.length == 0) {
-            return new int[0];
-        }
-        int[] res = new int[a.length];
-        res[0] = 1;
-        for (int i = 1; i <= a.length - 1; i++) {
-            res[i] = res[i - 1] * a[i - 1];
-        }
-        int tmp = 1;
-        for (int i = a.length - 2; i >= 0; i--) {
-            tmp *= a[i + 1];
-            res[i] *= tmp;
-        }
-        return res;
-    }
 }
