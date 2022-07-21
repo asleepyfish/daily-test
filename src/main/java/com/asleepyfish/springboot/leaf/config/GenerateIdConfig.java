@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class GenerateIdConfig {
-    @Bean
+/*    @Bean
     public LeafService leafService() {
         return new LeafService();
     }
@@ -20,5 +20,5 @@ public class GenerateIdConfig {
     @Bean
     public LeafUtils leafUtils(LeafService leafService) {
         return new LeafUtils(leafService);
-    }
+    }*/
 }
