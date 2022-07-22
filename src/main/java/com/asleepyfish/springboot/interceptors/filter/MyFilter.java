@@ -1,4 +1,4 @@
-package com.asleepyfish.springboot.filter;
+package com.asleepyfish.springboot.interceptors.filter;
 
 import javax.servlet.*;
 import java.io.IOException;

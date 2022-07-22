@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 /**
  * @Author: zhoujh42045
  * @Date: 2022/5/17 15:28
- * @Description: TODO
+ * @Description: 拦截器配置类
  */
 @Configuration
 public class WebConfigurer implements WebMvcConfigurer {

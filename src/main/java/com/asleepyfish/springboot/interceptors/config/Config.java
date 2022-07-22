@@ -1,8 +1,8 @@
-package com.asleepyfish.springboot.config;
+package com.asleepyfish.springboot.interceptors.config;
 
-import com.asleepyfish.springboot.filter.MyFilter;
-import com.asleepyfish.springboot.listener.MyListener;
-import com.asleepyfish.springboot.servlet.MyServlet;
+import com.asleepyfish.springboot.interceptors.filter.MyFilter;
+import com.asleepyfish.springboot.interceptors.listener.MyListener;
+import com.asleepyfish.springboot.interceptors.servlet.MyServlet;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
@@ -18,7 +18,7 @@ import java.util.Arrays;
 /**
  * @Author: zhoujh42045
  * @Date: 2022/5/17 17:12
- * @Description: TODO
+ * @Description: servlet、filter、listener配置类
  */
 @Configuration
 public class Config {

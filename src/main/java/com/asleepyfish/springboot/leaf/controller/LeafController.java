@@ -1,19 +1,29 @@
 package com.asleepyfish.springboot.leaf.controller;
 
-import com.asleepyfish.springboot.leaf.util.LeafUtils;
+import com.asleepyfish.springboot.leaf.enums.BaseBizIdEnum;
+import com.sankuai.inf.leaf.plugin.utils.BizIdUtils;
+import com.sankuai.inf.leaf.plugin.utils.SegmentIdUtils;
+import com.sankuai.inf.leaf.plugin.utils.SnowflakeIdUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Author: asleepyfish
- * @Date: 2022-07-21 19:31
- * @Description: TODO
+ * @author zhoujh42045
  */
 @RestController
 public class LeafController {
+    @PostMapping("/getSegmentId")
+    public Long getSegmentId(String key) {
+        return SegmentIdUtils.getId(key);
+    }
 
-    @PostMapping("/getId")
-    public String getId() {
-        return LeafUtils.getId();
+    @PostMapping("/getSnowflakeId")
+    public Long getSnowflakeId() {
+        return SnowflakeIdUtils.getId();
+    }
+
+    @PostMapping("/getBizId")
+    public String getBizId() {
+        return BizIdUtils.getId(BaseBizIdEnum.INSTITUTION);
     }
 }
